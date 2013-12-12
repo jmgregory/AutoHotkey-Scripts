@@ -16,8 +16,7 @@ IfWinActive Evernote
 ; New task
 $^!n::
 SendMode Input
-SetTitleMatchMode, 2
 Send !^n
-WinWait Evernote
+WinWaitActive Evernote ahk_class ENSingleNoteView
 Send {F2} ; Start in the title field
 return
