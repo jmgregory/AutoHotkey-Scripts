@@ -20,6 +20,12 @@ IfWinActive, ahk_class CabinetWClass
 Send {Home}
 return
 
+^+a::
+Suspend On
+Send ^a
+Suspend Off
+return
+
 $^k::
 SetTitleMatchMode, 2
 SendMode Input
