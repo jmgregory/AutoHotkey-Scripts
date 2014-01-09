@@ -39,6 +39,11 @@ IfWinActive, Firefox
 	Send ^k
 	return
 }
+IfWinActive Console2
+{
+	Send ^k
+	return
+}
 Send {Shift Down}{End}{End}{Shift Up} ; Double [End] for Visual Studio compatibility
 if (EmacsClipboard = 1)
 {
@@ -63,7 +68,13 @@ EmacsClipboard = 1
 return
 
 ^y::
+SetTitleMatchMode, 2
 SendMode Input
+IfWinActive Console2
+{
+	Send ^y
+	return
+}
 Send ^v
 return
 
