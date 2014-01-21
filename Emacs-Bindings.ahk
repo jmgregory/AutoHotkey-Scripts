@@ -6,11 +6,21 @@
 ; Go to end of line
 ^e::
 SendMode Input
+IfWinActive, ahk_class PuTTY
+{
+	Send ^e
+	return
+}
 Send {End}{End} ; doubled for Vis. Studio compatibility
 return
 
 $^a::
 SendMode Input
+IfWinActive, ahk_class PuTTY
+{
+	Send ^a
+	return
+}
 IfWinActive, ahk_class CabinetWClass
 {
 	; We're in a folder, not a text field
@@ -29,6 +39,11 @@ return
 $^k::
 SetTitleMatchMode, 2
 SendMode Input
+IfWinActive, ahk_class PuTTY
+{
+	Send ^k
+	return
+}
 IfWinActive Google Chrome
 {
 	Send ^k
@@ -70,6 +85,11 @@ return
 ^y::
 SetTitleMatchMode, 2
 SendMode Input
+IfWinActive, ahk_class PuTTY
+{
+	Send ^y
+	return
+}
 IfWinActive Console2
 {
 	Send ^y
